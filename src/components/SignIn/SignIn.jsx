@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
+import LoginIcon from '../../assets/images/login.svg' 
+import styles from './SignIn.module.css'
 
 const SignIn = (props) => {
 
@@ -29,9 +31,13 @@ const SignIn = (props) => {
   }
 
   return (
-    <main>
-      <h1>Sign In Form</h1>
+    <main className={styles.container}>
+      <section>
+      <img src={LoginIcon} alt="An owl sitting on a sign" />
+      </section>
+      
       <form onSubmit={handleSubmit}>
+      <h1>Sign In </h1>
         <label>Username:</label>
         <input type="text" name='username' onChange={handleChange} />
         <br />

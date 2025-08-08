@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
+import SignupIcon from '../../assets/images/signup.svg'
+import styles from './SignUp.module.css'
 
 const SignUp = (props) => {
   const navigate = useNavigate()
@@ -45,11 +47,14 @@ const SignUp = (props) => {
   }
 
   return (
-    <main>
-      <h1>Sign up Form</h1>
-      {/* add error message display to form */}
-      {error}
+    <main className={styles.container}>
+      <section>
+        <img src={SignupIcon} alt="An owl sitting on a sign" />
+      </section>
+      <section>
       <form onSubmit={handleSubmit}>
+      <h1>Sign up Form</h1>
+      <p>{error}</p>
         <label>Username:</label>
         <input type="text" name='username' onChange={handleChange} />
         <br />
@@ -61,7 +66,10 @@ const SignUp = (props) => {
         <br />
         <button type="submit" disabled={formIsInvalid}>Sign up</button>
       </form>
+      </section>
     </main>
+
+    
   )
 }
 
